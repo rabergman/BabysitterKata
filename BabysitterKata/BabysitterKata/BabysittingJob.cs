@@ -50,5 +50,10 @@ namespace BabysitterKata
         }
 
         public int? BedTime { get; set; }
+
+        public decimal CalculatePay()
+        {
+            return 12;
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace BabysitterKata.Tests
         {
             babysittingJob.StartTime = 1700;
             babysittingJob.EndTime = 1800;
-            Assert.AreEqual(12.0, babysittingJob.CalculatePay());
+            Assert.AreEqual(12.0M, babysittingJob.CalculatePay());
         }
     }
 }
