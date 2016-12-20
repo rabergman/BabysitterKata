@@ -11,5 +11,13 @@ namespace BabysitterKata.Tests
     [TestClass()]
     public class ProgramTests
     {
+        [TestMethod()]
+        public void VerifyValidStartTimeTest()
+        {
+            BabysittingJob babysittingJob = new BabysittingJob();
+            babysittingJob.StartTime = 1700;
+
+            Assert.IsTrue(babysittingJob.IsValidStartTime);
+        }
     }
 }
