@@ -19,5 +19,14 @@ namespace BabysitterKata.Tests
 
             Assert.AreEqual(1700, babysittingJob.StartTime);
         }
+
+        [TestMethod()]
+        public void VerifyInvalidStartTimeReturnsNull()
+        {
+            BabysittingJob babysittingJob = new BabysittingJob();
+            babysittingJob.StartTime = 1500;
+
+            Assert.IsNull(babysittingJob.StartTime);
+        }
     }
 }
