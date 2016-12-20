@@ -61,17 +61,20 @@ namespace BabysitterKata
 
         private int HoursWorkedFor12Dollars()
         {
-            return 1;
+            if (_startTime < 1700 || _startTime >= BedTime)
+                return 0;
+
+            return (int)(_endTime - _startTime) / 100;
         }
 
         private int HoursWorkedFor8Dollars()
         {
-            return 1;
+            return 0;
         }
 
         private int HoursWorkedFor16Dollars()
         {
-            return 1;
+            return 0;
         }
     }
 }
