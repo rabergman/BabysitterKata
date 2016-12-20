@@ -52,18 +52,26 @@ namespace BabysitterKata
 
         public decimal CalculatePay()
         {
-            decimal returnValue = 0;
-            int hoursWorked = (int)_endTime - (int)_startTime;
+            int hoursWorked12 = HoursWorkedFor12Dollars();
+            int hoursWorked8 = HoursWorkedFor8Dollars();
+            int hoursWorked16 = HoursWorkedFor16Dollars();
 
-            if (BedTime == null)
-                returnValue = (hoursWorked / 100) * 12;
-            else
-            {
-                if (BedTime <= _startTime)
-                    returnValue = (hoursWorked / 100) * 8;
-            }
+            return (hoursWorked12 * 12) + (hoursWorked8 * 8) + (hoursWorked16 * 16);
+        }
 
-            return returnValue;
+        private int HoursWorkedFor12Dollars()
+        {
+            return 1;
+        }
+
+        private int HoursWorkedFor8Dollars()
+        {
+            return 1;
+        }
+
+        private int HoursWorkedFor16Dollars()
+        {
+            return 1;
         }
     }
 }
