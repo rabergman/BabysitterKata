@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace BabysitterKata.Tests
 {
     [TestClass()]
-    public class ProgramTests
+    public class StartTimeTests
     {
         BabysittingJob babysittingJob = new BabysittingJob();
 
@@ -35,6 +35,14 @@ namespace BabysitterKata.Tests
             babysittingJob.StartTime = 100;
 
             Assert.AreEqual(100, babysittingJob.StartTime);
+        }
+
+        [TestMethod()]
+        public void VerifyStartTimeAfterMidnightIsNotValid()
+        {
+            babysittingJob.StartTime = 500;
+
+            Assert.IsNull(babysittingJob.StartTime);
         }
     }
 }
