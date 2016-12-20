@@ -9,6 +9,7 @@ namespace BabysitterKata
     public class BabysittingJob
     {
         int? _startTime = null;
+        int? _endTime = null;
 
         public int? StartTime
         {
@@ -24,6 +25,19 @@ namespace BabysitterKata
                     _startTime = value;
                 else
                     _startTime = null;
+            }
+        }
+
+        public int? EndTime
+        {
+            get
+            {
+                return _endTime;
+            }
+            set
+            {
+                if (_startTime == null)
+                    _endTime = null;
             }
         }
     }
