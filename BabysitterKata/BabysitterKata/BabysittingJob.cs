@@ -10,6 +10,7 @@ namespace BabysitterKata
     {
         int? _startTime = null;
         int? _endTime = null;
+        int? _bedTime = null;
 
         public int? StartTime
         {
@@ -48,6 +49,6 @@ namespace BabysitterKata
             }
         }
 
-        public int BedTime { get; set; }
+        public int? BedTime { get; set; }
     }
 }

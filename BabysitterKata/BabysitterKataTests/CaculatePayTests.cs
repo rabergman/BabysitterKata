@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 namespace BabysitterKata.Tests
 {
     [TestClass()]
-    public class BedTimeTests
+    public class CaculatePayTests
     {
         BabysittingJob babysittingJob = new BabysittingJob();
 
         [TestMethod()]
-        public void VerifySettingBedTimeTest()
+        public void VerifyCaculatingOneHourPayNoBedTimeBeforeMidnight()
         {
-            babysittingJob.BedTime = 2300;
-            Assert.AreEqual(2300, babysittingJob.BedTime);
+            babysittingJob.StartTime = 1700;
+            babysittingJob.EndTime = 1800;
+            Assert.AreEqual(12.0, babysittingJob.CalculatePay());
         }
     }
 }
