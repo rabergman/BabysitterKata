@@ -53,7 +53,8 @@ namespace BabysitterKata
 
         public decimal CalculatePay()
         {
-            return 12;
+            int hoursWorked = (int)_endTime - (int)_startTime;
+            return (hoursWorked / 100) * 12;
         }
     }
 }
