@@ -12,12 +12,12 @@ namespace BabysitterKata.Tests
     public class ProgramTests
     {
         [TestMethod()]
-        public void VerifyValidStartTimeTest()
+        public void VerifySettingStartTimeTest()
         {
             BabysittingJob babysittingJob = new BabysittingJob();
             babysittingJob.StartTime = 1700;
 
-            Assert.IsTrue(babysittingJob.IsValidStartTime);
+            Assert.AreEqual(1700, babysittingJob.StartTime);
         }
     }
 }
