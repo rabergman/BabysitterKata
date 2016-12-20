@@ -11,10 +11,11 @@ namespace BabysitterKata.Tests
     [TestClass()]
     public class ProgramTests
     {
+        BabysittingJob babysittingJob = new BabysittingJob();
+
         [TestMethod()]
         public void VerifySettingStartTimeTest()
         {
-            BabysittingJob babysittingJob = new BabysittingJob();
             babysittingJob.StartTime = 1700;
 
             Assert.AreEqual(1700, babysittingJob.StartTime);
@@ -23,10 +24,17 @@ namespace BabysitterKata.Tests
         [TestMethod()]
         public void VerifyInvalidStartTimeReturnsNull()
         {
-            BabysittingJob babysittingJob = new BabysittingJob();
             babysittingJob.StartTime = 1500;
 
             Assert.IsNull(babysittingJob.StartTime);
+        }
+
+        [TestMethod()]
+        public void VerifyStartTimeAfterMidnightIsValid()
+        {
+            babysittingJob.StartTime = 100;
+
+            Assert.AreEqual(100, babysittingJob.StartTime);
         }
     }
 }
