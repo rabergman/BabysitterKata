@@ -20,5 +20,13 @@ namespace BabysitterKata.Tests
             Assert.AreEqual(12.0M, babysittingJob.CalculatePay());
         }
 
+        [TestMethod()]
+        public void VerifyCaculatingOneHourPayAfterBedtimeBeforeMidnight()
+        {
+            babysittingJob.StartTime = 1900;
+            babysittingJob.EndTime = 2000;
+            babysittingJob.BedTime = 1900;
+            Assert.AreEqual(8.0M, babysittingJob.CalculatePay());
+        }
     }
 }
