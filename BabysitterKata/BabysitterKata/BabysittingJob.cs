@@ -61,15 +61,74 @@ namespace BabysitterKata
 
         private int HoursWorkedFor12Dollars()
         {
-            if (_startTime < 1700 || _startTime >= BedTime)
+            //Start time was after midnight no $12 hours
+            if (_startTime < 1700)
                 return 0;
+
+            if (BedTime != null) //There was a bed time
+            {
+                if (_endTime < 1700)
+                {
+                    //There was a bed time and the job ended after midnight
+
+                    if (BedTime < 1700)
+                    {
+                        //There was a bed time and the job ended after
+                        //  midnight and bedtime was after midnight
+
+                        return (int)(2400 - _startTime) / 100;
+                    }
+                    else
+                    {
+                        //There was a bed time and the job ended after
+                        //  midnight and bedtime was before midnight
+
+                        return (int)(BedTime - _startTime) / 100;
+                    }
+                }
+                else
+                {
+                    //There was a bed time and the job ended before midnight
+
+                    //There was a bed time and the job ended before midnight
+                    // and bed time was after midnight
+                    if (BedTime < 1700)
+                        return (int)(_endTime - _startTime) / 100;
+
+                    //There was a bed time and the job ended before midnight
+                    // and bed time was before midnight
+                    if (BedTime < _endTime)
+                    {
+                        //There was a bed time and the job ended before midnight
+                        // and the bed time was before the end time
+                        return (int)(BedTime - _startTime) / 100;
+                    }
+                }
+            }
+            else //There was no bed time
+            {
+                //There was no bed time and end time was after midnight
+                if (_endTime < 1700)
+                {
+
+                }
+                else
+                {
+                    return (int)(_endTime - _startTime) / 100;
+                    //There was no bed time and end time was before midnight
+                }
+            }
 
             return (int)(_endTime - _startTime) / 100;
         }
 
         private int HoursWorkedFor8Dollars()
         {
-            return 0;
+            //Bed time is null
+            if (BedTime == null)
+                return 0;
+            else
+                return 1;
         }
 
         private int HoursWorkedFor16Dollars()
