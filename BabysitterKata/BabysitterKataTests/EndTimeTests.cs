@@ -26,5 +26,21 @@ namespace BabysitterKata.Tests
             babysittingJob.EndTime = 2300;
             Assert.IsNull(babysittingJob.EndTime);
         }
+
+        [TestMethod()]
+        public void VerifySettingEndTimeToAnInvalidTimeReturnsNull()
+        {
+            babysittingJob.StartTime = 1700;
+            babysittingJob.EndTime = 500;
+            Assert.IsNull(babysittingJob.EndTime);
+        }
+
+        [TestMethod()]
+        public void VerifySettingEndTimeToATimeBeforeStartTimeReturnsNull()
+        {
+            babysittingJob.StartTime = 1900;
+            babysittingJob.EndTime = 1800;
+            Assert.IsNull(babysittingJob.EndTime);
+        }
     }
 }
