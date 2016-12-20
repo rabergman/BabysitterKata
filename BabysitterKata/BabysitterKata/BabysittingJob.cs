@@ -38,6 +38,8 @@ namespace BabysitterKata
             {
                 if (_startTime == null)
                     _endTime = null;
+                else
+                    _endTime = value;
             }
         }
     }

@@ -15,6 +15,7 @@ namespace BabysitterKata.Tests
         [TestMethod()]
         public void VerifySettingEndTimeTest()
         {
+            babysittingJob.StartTime = 1700;
             babysittingJob.EndTime = 2300;
             Assert.AreEqual(2300, babysittingJob.EndTime);
         }
