@@ -28,5 +28,7 @@ namespace BabysitterKata.Tests
             babysittingJob.BedTime = 1900;
             Assert.AreEqual(8.0M, babysittingJob.CalculatePay());
         }
+
+
     }
 }

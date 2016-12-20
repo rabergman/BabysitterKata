@@ -10,7 +10,6 @@ namespace BabysitterKata
     {
         int? _startTime = null;
         int? _endTime = null;
-        int? _bedTime = null;
 
         public int? StartTime
         {
@@ -53,8 +52,18 @@ namespace BabysitterKata
 
         public decimal CalculatePay()
         {
+            decimal returnValue = 0;
             int hoursWorked = (int)_endTime - (int)_startTime;
-            return (hoursWorked / 100) * 12;
+
+            if (BedTime == null)
+                returnValue = (hoursWorked / 100) * 12;
+            else
+            {
+                if (BedTime <= _startTime)
+                    returnValue = (hoursWorked / 100) * 8;
+            }
+
+            return returnValue;
         }
     }
 }
