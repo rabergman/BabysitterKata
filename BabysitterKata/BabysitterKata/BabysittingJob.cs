@@ -8,6 +8,23 @@ namespace BabysitterKata
 {
     public class BabysittingJob
     {
-        public int StartTime { get; set; }
+        int? _startTime = null;
+
+        public int? StartTime
+        {
+            get
+            {
+                return _startTime;
+            }
+            set
+            {
+                if (value > 1699 && value < 2400)
+                    _startTime = value;
+                else if (value >= 0 && value < 400)
+                    _startTime = value;
+                else
+                    _startTime = null;
+            }
+        }
     }
 }
