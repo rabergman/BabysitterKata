@@ -40,7 +40,7 @@ namespace BabysitterKata
                     _endTime = null;
                 else if (value > 1799 && value < 2400 && value > _startTime)
                     _endTime = value;
-                else if (value >= 0 && value < 401 &&
+                else if (value >= 0 && value <= 400 &&
                     (_startTime > 1700 || _startTime < value))
                     _endTime = value;
                 else
@@ -152,10 +152,11 @@ namespace BabysitterKata
 
         private int HoursWorkedFor16Dollars()
         {
-            //End time is before midnight
+            //End time is after midnight
             if (_endTime < 1700)
                 return (int)(_endTime / 100);
 
+            //End time is before midnight
             return 0;
         }
     }
