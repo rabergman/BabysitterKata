@@ -13,7 +13,7 @@ namespace BabysitterKata.Tests
         BabysittingJob babysittingJob = new BabysittingJob();
 
         [TestMethod()]
-        public void VerifyCaculatingOneHourPayNoBedTimeBeforeMidnight()
+        public void OneHourPayNoBedTimeBeforeMidnightEnd()
         {
             babysittingJob.StartTime = 1700;
             babysittingJob.EndTime = 1800;
@@ -21,7 +21,7 @@ namespace BabysitterKata.Tests
         }
 
         [TestMethod()]
-        public void VerifyCaculatingOneHourPayAfterBedtimeBeforeMidnight()
+        public void OneHourPayAfterBedtimeBeforeMidnightEnd()
         {
             babysittingJob.StartTime = 1900;
             babysittingJob.EndTime = 2000;
@@ -30,7 +30,7 @@ namespace BabysitterKata.Tests
         }
 
         [TestMethod()]
-        public void VerifyCaculatingTwoHoursPayWithBedtimeBeforeMidnight()
+        public void TwoHoursPayWithBedtimeBeforeMidnightEnd()
         {
             babysittingJob.StartTime = 1800;
             babysittingJob.EndTime = 2000;
@@ -38,5 +38,20 @@ namespace BabysitterKata.Tests
             Assert.AreEqual(20.0M, babysittingJob.CalculatePay());
         }
 
+        [TestMethod()]
+        public void TwoHoursPayNoBedtimeBeforeMidnightEnd()
+        {
+            babysittingJob.StartTime = 1800;
+            babysittingJob.EndTime = 2000;
+            Assert.AreEqual(24.0M, babysittingJob.CalculatePay());
+        }
+
+        [TestMethod()]
+        public void TwoHoursPayNoBedTimeAfterMidnightEnd()
+        {
+            babysittingJob.StartTime = 1100;
+            babysittingJob.EndTime = 100;
+            Assert.AreEqual(28.0M, babysittingJob.CalculatePay());
+        }
     }
 }

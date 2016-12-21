@@ -65,8 +65,10 @@ namespace BabysitterKata
             if (_startTime < 1700)
                 return 0;
 
-            if (BedTime != null) //There was a bed time
+            if (BedTime != null)
             {
+                //There was a bed time
+
                 if (_endTime < 1700)
                 {
                     //There was a bed time and the job ended after midnight
@@ -90,17 +92,19 @@ namespace BabysitterKata
                 {
                     //There was a bed time and the job ended before midnight
 
-                    //There was a bed time and the job ended before midnight
-                    // and bed time was after midnight
                     if (BedTime < 1700)
-                        return (int)(_endTime - _startTime) / 100;
+                    {
+                        //There was a bed time and the job ended before midnight
+                        // and bed time was after midnight
 
-                    //There was a bed time and the job ended before midnight
-                    // and bed time was before midnight
+                        return (int)(_endTime - _startTime) / 100;
+                    }
+
                     if (BedTime < _endTime)
                     {
                         //There was a bed time and the job ended before midnight
-                        // and the bed time was before the end time
+                        // and bed time was before midnight
+
                         return (int)(BedTime - _startTime) / 100;
                     }
                 }
