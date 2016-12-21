@@ -6,7 +6,7 @@
 
 * Not completed
   * Error handling
-  * Gracefully handling valid but bad data
+  * Gracefully handling (type) valid but bad data
 
 * Requirements
   * The .NET 4.5 Framework is required to run this console application
