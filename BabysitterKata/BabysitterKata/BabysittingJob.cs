@@ -111,15 +111,15 @@ namespace BabysitterKata
             }
             else //There was no bed time
             {
-                //There was no bed time and end time was after midnight
                 if (_endTime < 1700)
                 {
-
+                    //There was no bed time and end time was after midnight
+                    return (int)(2400 - _startTime) / 100;
                 }
                 else
                 {
-                    return (int)(_endTime - _startTime) / 100;
                     //There was no bed time and end time was before midnight
+                    return (int)(_endTime - _startTime) / 100;
                 }
             }
 
@@ -128,15 +128,34 @@ namespace BabysitterKata
 
         private int HoursWorkedFor8Dollars()
         {
-            //Bed time is null
-            if (BedTime == null)
+            //Bed time was null or after midnight no $8 hours
+            if (BedTime == null || BedTime < 1700)
                 return 0;
             else
-                return 1;
+            {
+                //Bed time is not null and before midnight
+
+                if (_endTime < 1700)
+                {
+                    //Bed time is not null and before midnight and
+                    // end time is after midnight
+                    return (int)(2400 - BedTime) / 100;
+                }
+                else
+                {
+                    //Bed time is not null and is before midnight and
+                    // end time is before midnight
+                    return (int)(_endTime - BedTime) / 100;
+                }
+            }
         }
 
         private int HoursWorkedFor16Dollars()
         {
+            //End time is before midnight
+            if (_endTime < 1700)
+                return (int)(_endTime / 100);
+
             return 0;
         }
     }
