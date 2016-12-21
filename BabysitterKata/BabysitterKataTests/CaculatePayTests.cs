@@ -63,5 +63,22 @@ namespace BabysitterKata.Tests
             babysittingJob.BedTime = 2300;
             Assert.AreEqual(36.0M, babysittingJob.CalculatePay());
         }
+
+        [TestMethod()]
+        public void MaxTimeTest()
+        {
+            babysittingJob.StartTime = 1700;
+            babysittingJob.EndTime = 400;
+            Assert.AreEqual(148.0M, babysittingJob.CalculatePay());
+        }
+
+        [TestMethod()]
+        public void MaxTimeTestWithBedtime()
+        {
+            babysittingJob.StartTime = 1700;
+            babysittingJob.BedTime = 2100;
+            babysittingJob.EndTime = 400;
+            Assert.AreEqual(136.0M, babysittingJob.CalculatePay());
+        }
     }
 }
