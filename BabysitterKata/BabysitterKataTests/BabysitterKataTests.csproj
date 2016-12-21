@@ -51,7 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BedtimeTest.cs" />
-    <Compile Include="CaculatePayTests.cs" />
+    <Compile Include="CalculatePayTests.cs" />
     <Compile Include="EndTimeTests.cs" />
     <Compile Include="StartTimeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

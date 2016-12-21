@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BabysitterKata.Tests
 {
     [TestClass()]
-    public class CaculatePayTests
+    public class CalculatePayTests
     {
         BabysittingJob babysittingJob = new BabysittingJob();
 
